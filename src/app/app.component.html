@@ -1,6 +1,17 @@
 <h1>
     Welcome to {{ title }}!
 </h1>
+<ng-template #ourTemplate let-foo let-bar="petya" let-baz>
+    <div>{{foo}}</div>
+    <div>{{bar}}</div>
+    <div>{{baz}}</div>
+</ng-template>
+<ng-template [ngTemplateOutlet]="ourTemplate" 
+    [ngTemplateOutletContext]="{
+                                  $implicit: 'Иннокентий',
+                                  petya: 'Пётр'
+                                }"></ng-template>
+<hr>
 <ng-template #without let-foo>
     <div>
         {{ foo }}

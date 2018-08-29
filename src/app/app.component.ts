@@ -18,6 +18,8 @@ export class AppComponent implements OnInit {
   templateWith: TemplateRef<any>;
   @ViewChild('without')
   templateWithout: TemplateRef<any>;
+  @ViewChild('ourTemplate')
+  templateContext: TemplateRef<any>;
 
   constructor(
     private _viewContainerRef: ViewContainerRef
@@ -30,5 +32,6 @@ export class AppComponent implements OnInit {
     this._viewContainerRef.createEmbeddedView(this.templateWithout, {
       $implicit: 'is awesome'
     });
+    this._viewContainerRef.createEmbeddedView(this.templateContext);
   }
 }
