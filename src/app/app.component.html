@@ -1,0 +1,13 @@
+<h1>
+    Welcome to {{ title }}!
+</h1>
+<ng-template #without let-foo>
+    <div>
+        {{ foo }}
+    </div>
+</ng-template>
+<ng-template #with let-foo="$implicit">
+    <div>
+        {{ foo }}
+    </div>
+</ng-template>
